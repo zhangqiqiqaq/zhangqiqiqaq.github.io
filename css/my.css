@@ -78,7 +78,7 @@
 body{
     font-family: '本墨陈黑';
 }
-
+/*主标题字体设置*/
 @font-face{
     font-family: '';
     src: url('../.ttf');
@@ -86,4 +86,11 @@ body{
 
 .diy-font{
     font-family: '';
+}
+/*鼠标指针*/
+*{
+    cursor: url("/medias/cursor1.ico"),auto!important;
+}
+:active{
+    cursor: url("/medias/cursor2.ico"),auto!important;
 }
