@@ -69,3 +69,21 @@
         font-size: 1.5rem;
     }
 }
+
+@font-face{
+    font-family: '本墨陈黑';
+    src: url('../font/本墨陈黑.ttf');
+}
+
+body{
+    font-family: '本墨陈黑';
+}
+
+@font-face{
+    font-family: '';
+    src: url('../.ttf');
+}
+
+.diy-font{
+    font-family: '';
+}
