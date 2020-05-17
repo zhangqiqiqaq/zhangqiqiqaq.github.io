@@ -41,31 +41,4 @@
     
   </entry>
   
-  <entry>
-    <title>工作寻找之感想</title>
-    <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/17/gong-zuo-xun-zhao-zhi-gan-xiang/"/>
-    <id>http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/17/gong-zuo-xun-zhao-zhi-gan-xiang/</id>
-    <published>2020-05-17T14:29:46.000Z</published>
-    <updated>2020-05-17T14:29:46.783Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
 </feed>
