@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/"/>
-  <updated>2020-05-13T18:34:57.496Z</updated>
+  <updated>2020-05-17T14:37:53.833Z</updated>
   <id>http://zhangqiqiqaq/zhangqiqiqaq.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test2</title>
-    <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/13/test2/"/>
-    <id>http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/13/test2/</id>
-    <published>2020-05-13T12:23:55.000Z</published>
-    <updated>2020-05-13T18:34:57.496Z</updated>
+    <title>利用Linux deploy把EFB运行在安卓机上</title>
+    <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/17/li-yong-linux-deploy-ba-efb-yun-xing-zai-an-zhuo-ji-shang/"/>
+    <id>http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/17/li-yong-linux-deploy-ba-efb-yun-xing-zai-an-zhuo-ji-shang/</id>
+    <published>2020-05-17T14:31:54.000Z</published>
+    <updated>2020-05-17T14:37:53.833Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;&lt;span id=&quot;efb-wechat-利用linux-deploy把efb运行在安卓机上&quot;&gt;EFB-WeChat- 利用Linux
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>工作寻找之感想</title>
+    <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/17/gong-zuo-xun-zhao-zhi-gan-xiang/"/>
+    <id>http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/17/gong-zuo-xun-zhao-zhi-gan-xiang/</id>
+    <published>2020-05-17T14:29:46.000Z</published>
+    <updated>2020-05-17T14:29:46.783Z</updated>
     
     <summary type="html">
     
@@ -34,29 +57,6 @@
           .forEach(el =&gt; {
             if (!el.dataset.src) { return; }
        
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>背影</title>
-    <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/12/bei-ying/"/>
-    <id>http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/12/bei-ying/</id>
-    <published>2020-05-12T08:06:16.000Z</published>
-    <updated>2020-05-13T15:34:40.739Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2&gt;&lt;span
         
       
     

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="test2, 张启启的部落阁">
+    <meta name="keywords" content="利用Linux deploy把EFB运行在安卓机上, 张启启的部落阁">
     <meta name="description" content="专注生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>test2 | 张启启的部落阁</title>
+    <title>利用Linux deploy把EFB运行在安卓机上 | 张启启的部落阁</title>
     <link rel="icon" type="image/png" href="/favicon1.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -287,12 +287,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">test2</h1>
+                    <h1 class="description center-align post-title">利用Linux deploy把EFB运行在安卓机上</h1>
                 </div>
             </div>
         </div>
@@ -429,28 +429,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-13
+                    2020-05-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-14
+                    2020-05-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    52
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
 
@@ -465,7 +465,84 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h1><span id="efb-wechat-利用linux-deploy把efb运行在安卓机上">EFB-WeChat- 利用Linux deploy把EFB运行在安卓机上</span></h1><p>这个操作原本是需要VPS来进行的，昨天晚上突发奇想，反正都是基于Linux，不如用旧手机整个Linux来运行<br>经过我不（闲）懈（的）努（蛋）力（疼）终于搞定了。</p>
+<p>EH Forwarder Bot是一个可扩展的聊天隧道框架，允许用户一次发送和接收来自多个IM平台的消息，并最终远程管理他们的帐户<br>目前可以实现用电报收发QQ、微信、Facebook Messenger等消息，你也可以同时一起收发多个微信、多个QQ等<br>今天我们只说收发微信消息，QQ的配置也同理，但是要用到酷Q，需要配置下docker</p>
+<p>这里先声明一下这个的优缺点：</p>
+<h3><span id="优点">优点：</span></h3><p>Telegram这个软件有FCM推送，聊天记录永久存储，流畅，消息再多都不会卡顿，还有防撤回功能<br>还有软件里贴图表情很多，可以直接发送到微信<br>还有Telegram这个软件，懂的人自然懂  </p>
+<h3><span id="缺点">缺点：</span></h3><p>仅支持微信网页版所支持的功能以及消息类型，即没有朋友圈、没有红包、不能发语音、不能发位置等等诸如此类<br>部分文件、图片、表情等多媒体文件会被网页版微信截断，即收不到任何数据，尤以表情为甚（这个主要是一些微信特有的表情包，斗图没问题）<br>因此造成的偶发现象，会提醒用户使用移动客户端查看</p>
+<h2><span id="强调一下">强调一下：</span></h2><p>这个操作主要是基于网页版微信来使用的，开始前请先在电脑上测试能不能登录网页版微信，如果不能就放弃吧<br>还有，这个需要科学上网</p>
+<p>下面正式开始我们的骚操作</p>
+<h3><span id="前期准备">前期准备：</span></h3><p>一台安卓设备（手机、平板设备都可以，建议不用的旧手机就可以）</p>
+<p>1.设备硬件要求：建议RAM在1G及以上，手机ROM空闲容量最少4G以上<br>设备软件要求：建议安卓版本4.0以上，系统必须是拥有ROOT系统权限的</p>
+<p>2.Busy Box 相信酷安的老哥们应该都知道这个软件咋用吧，就不介绍了</p>
+<p>4.Linux Deploy 安卓平台虚拟机（chroot运行linux的容器）</p>
+<p>5.电脑一台 其实没有电脑用手机也可以，就是操作麻烦一些</p>
+<p>6.ssh软件一个 电脑推荐finalshell（新手使用比较直观），手机推荐termux，反正能用就行</p>
+<h3><span id="正式开始">正式开始：</span></h3><p>*第一步：</p>
+<p>先给旧手机root（必须），然后科学上网，不然后面还要换源，没有的可以自己百度下怎么换国内源<br>最后安装Linux deploy</p>
+<p>*第二步：</p>
+<p>Linux deploy设置</p>
+<p>先点左上角三个横线——设置——前三项勾选上</p>
+<p>再点右下角三个横线，发行版选Debian，架构选armhf，源地址默认（不能科学上网的自己百度国内源填进去）<br>镜像大小建议10240（10G）建议最小不少于4个G，用户密码默认就行（愿意自己改就改改）<br>最后拉到下面SSH，勾选启用ssh，其他全部默认就好</p>
+<p>返回主页面，点右上角三个点，点击安装（在这之前联网就不用我说了叭）等待安装完成。</p>
+<p>*第三步：</p>
+<p>用ssh软件连接我们装好的Linux，局域网下可以用电脑或者另一部手机来操作（在同一个WiFi下即可）<br>如果没有局域网可以在安装Linux的手机上操作（这里推荐juice ssh）</p>
+<p>这里只说在局域网下的情况，没有局域网的情况如何连接请百度juice ssh的用法  </p>
+<p>我们先用ssh软件连接到我们手机上安装好的Linux  </p>
+<p>ip地址就是手机的ip地址，有的版本会在Linuxdeploy的主页面上显示，有的不会显示，直接到WiFi设置里面看，就可以了  </p>
+<p>finalshell的用法大家自行百度一下就好</p>
+<p>termux使用方法<br>输入命令pkg install openssh<br>键入命令：ssh [username]@[ip] 回车<br>比如：ssh <a href="mailto:android@192.168.123.123">android@192.168.123.123</a> 回车<br>输入服务器ssh登录密码<br>登录成功</p>
+<h2><span id="前期准备工作已经完成下面进入正题">前期准备工作已经完成，下面进入正题：</span></h2><p>（没想到吧，这才开始正题）<br>（如果运行下面命令后提示权限错误，请在命令前加上sudo再次运行）</p>
+<p><strong>1、安装依赖</strong></p>
+<p><code>apt install libwebp-dev libmagic-dev git screen -y</code></p>
+<p><strong>2、安装Python3.6 4</strong></p>
+<p><code>wget https://www.moerats.com/usr/shell/Python3/Debian_Python3.6.sh &amp;&amp; sh Debian_Python3.6.sh</code></p>
+<p><strong>3、安装ffmpeg</strong></p>
+<p>下载ffmpeg二进制</p>
+<p><code>wget https://www.moerats.com/usr/down/ffmpeg/ffmpeg-git-$(getconf LONG_BIT)bit-static.tar.xz</code></p>
+<p>解压文件</p>
+<p><code>tar xvf ffmpeg-git-*-static.tar.xz</code></p>
+<p>移动ffmpeg可执行文件</p>
+<p><code>mv ffmpeg-git-/ffmpeg ffmpeg-git-/ffprobe /usr/bin/</code></p>
+<p>删除文件</p>
+<p><code>rm -rf ffmpeg-git-*</code></p>
+<p><strong>4、安装框架</strong></p>
+<p><code>pip3 install ehforwarderbot</code></p>
+<p><strong>5、安装电报模块</strong></p>
+<p><code>pip3 install efb-telegram-master</code></p>
+<p><em>（如果你在此步骤遇到错误信息，请到最后查看解决方法）</em></p>
+<p><strong>6、 安装微信模块</strong></p>
+<p><code>pip3 install efb-wechat-slave</code></p>
+<p><strong>7、配置模块</strong></p>
+<p>先新建配置文件夹和配置文件config.yaml</p>
+<p><code>mkdir -p ~/.ehforwarderbot/profiles/default</code></p>
+<p><code>nano ~/.ehforwarderbot/profiles/default/config.yaml</code></p>
+<p><em>Default为配置文件默认的文件夹，你也可以命名为其它的，不会的就默认</em></p>
+<p>在打开的界面填入以下内容：</p>
+<p><code>master_channel: blueset.telegram</code><br><code>slave_channels:</code><br><code>- blueset.wechat</code></p>
+<p>然后按Ctrl+x 接着按Y 保存退出</p>
+<p><strong>8、配置电报模块</strong></p>
+<p>首先打开电报软件<br>关注@BotFather<br>到对话框依次输入：<code>/start</code>——<code>/newbot</code><br>然后会要你给机器人命名(填入你想取得名字)，命名完成会给你一个Token，记好此Token<br>然后关注@get_id_bot<br>到对话框输入：<code>/start</code><br>在返回的消息中找到“your chat ID =12345678” 记好等号后面的数字  </p>
+<p>再新建一个电报模块配置文件夹和配置文件config.yaml</p>
+<p>使用命令：</p>
+<p><code>mkdir ~/.ehforwarderbot/profiles/default/blueset.telegram</code></p>
+<p><code>nano ~/.ehforwarderbot/profiles/default/blueset.telegram/config.yaml</code></p>
+<p><em>同样的也建在default文件夹，如果你上面更改了default文件夹，那这里也要更改</em></p>
+<p>在打开的界面填入以下内容：</p>
+<p><code>token: "你的Token"</code><br><code>admins:</code><br><code>- 你的ID</code></p>
+<p>然后按Ctrl+x 接着按Y 保存退出</p>
+<p><strong>9、启动</strong></p>
+<p>在命令行界面输入：</p>
+<p><code>ehforwarderbot</code></p>
+<p>如果你前面换了默认的文件夹，则使用：</p>
+<p><code>ehforwarderbot -p 你文件夹的名字</code></p>
+<p>使用这个命令后，命令行界面会显示二维码，用自己的微信扫码登录即可。</p>
+<h3><span id="前面安装etm如果遇到错误信息请看此处">前面安装ETM如果遇到错误信息请看此处：</span></h3><h5><span id="如果遇到类似报错">如果遇到类似报错：</span></h5><p>Command “/usr/local/bin/python3.6 -u -c “import setuptools, tokenize;<strong>file</strong>=’/tmp/pip-build-pq5689wy/cffi/setup.py’;f=getattr(tokenize, ‘open’, open)(<strong>file</strong>);code=f.read().replace(‘\r\n’, ‘\n’);f.close();exec(compile(code,  <strong>file</strong>, ‘exec’))” install –record /tmp/pip-10d1o1nr-record/install-record.txt –single-version-externally-managed –compile” failed with error code 1 in /tmp/pip-build-pq5689wy/cffi/</p>
+<h5><span id="则在命令行界面输入">则在命令行界面输入：</span></h5><p><code>sudo pip3 install wheel</code></p>
+<h5><span id="如果遇到下面这样的报错">如果遇到下面这样的报错：</span></h5><p>Failed cleaning build dir for cryptography<br>Failed building wheel for cffi</p>
+<h5><span id="则在命令行运行如下命令">则在命令行运行如下命令：</span></h5><p><code>sudo apt install libffi-dev</code><br><code>sudo -H pip install –user –upgrade –no-cache-dir efb-telegram-master</code></p>
+<h3><span id="即可解决">即可解决</span></h3><p><strong>命令部分整理来自Rat’s Blog，附上链接：<a href="https://www.moerats.com/archives/931/" target="_blank" rel="noopener">https://www.moerats.com/archives/931/</a><br>**</strong>EFB官方地址：<a href="https://github.com/blueset/ehForwarderBot" target="_blank" rel="noopener">https://github.com/blueset/ehForwarderBot</a>**<br><br><br><br><br><br><br><strong>如果有其它报错，请各位大佬自行google或者baidu，因为我也不会<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8">😂</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8">😂</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8">😂</span></strong></p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -508,7 +585,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/13/test2/">http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/13/test2/</a>
+                    <a href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/17/li-yong-linux-deploy-ba-efb-yun-xing-zai-an-zhuo-ji-shang/">http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/17/li-yong-linux-deploy-ba-efb-yun-xing-zai-an-zhuo-ji-shang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -588,7 +665,7 @@
         repo: 'zhangqiqiqaq.github.io',
         owner: 'zhangqiqiqaq',
         admin: "zhangqiqiqaq",
-        id: '2020-05-13T20-23-55',
+        id: '2020-05-17T22-31-54',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -617,27 +694,25 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/05/13/test2/">
+                <a href="/2020/05/17/li-yong-linux-deploy-ba-efb-yun-xing-zai-an-zhuo-ji-shang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="test2">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="利用Linux deploy把EFB运行在安卓机上">
                         
-                        <span class="card-title">test2</span>
+                        <span class="card-title">利用Linux deploy把EFB运行在安卓机上</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            EFB-WeChat- 利用Linux deploy把EFB运行在安卓机上这个操作原本是需要VPS来进行的，昨天晚上突发奇想，反正都是基于Linux，不如用旧手机整个Linux来运行经过我不（闲）懈（的）努（蛋）力（疼）终于搞定了。
+EH 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-17
                             </span>
                         <span class="publish-author">
                             
@@ -658,24 +733,27 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/12/bei-ying/">
+                <a href="/2020/05/17/gong-zuo-xun-zhao-zhi-gan-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="背影">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="工作寻找之感想">
                         
-                        <span class="card-title">背影</span>
+                        <span class="card-title">工作寻找之感想</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            背影我与父亲不相见已二年余了，我最不能忘记的是他的背影。那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子。我从北京到徐州，打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说：“事已如此
+                            
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-17
                             </span>
                         <span class="publish-author">
                             
