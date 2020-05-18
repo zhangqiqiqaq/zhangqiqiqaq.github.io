@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/"/>
-  <updated>2020-05-17T14:52:42.365Z</updated>
+  <updated>2020-05-18T16:09:09.801Z</updated>
   <id>http://zhangqiqiqaq/zhangqiqiqaq.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第一天入职新公司之体会</title>
+    <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/18/di-yi-tian-ru-zhi-xin-gong-si-zhi-ti-hui/"/>
+    <id>http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/18/di-yi-tian-ru-zhi-xin-gong-si-zhi-ti-hui/</id>
+    <published>2020-05-18T15:37:28.000Z</published>
+    <updated>2020-05-18T16:09:09.801Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;$&lt;del&gt;$今天是入职新公司的第一天，早上怀着忐忑的心情走进公司，找到坐在外面的同事说自己来入职。同事很热情，帮忙叫负责人过来对接，交了材料后顺利入职开始了加入新公司的一天。&lt;br&gt;$&lt;/del&gt;$首先进行的是读书活动，大家来到一间空屋子准备好。今天读的是《论语·理仁篇》
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工作随笔" scheme="http://zhangqiqiqaq/zhangqiqiqaq.github.io/categories/%E5%B7%A5%E4%BD%9C%E9%9A%8F%E7%AC%94/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>利用Linux deploy把EFB运行在安卓机上</title>

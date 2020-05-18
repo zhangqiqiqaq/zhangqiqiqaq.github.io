@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>第一天入职新公司之体会</title>
+      <link href="/2020/05/18/di-yi-tian-ru-zhi-xin-gong-si-zhi-ti-hui/"/>
+      <url>/2020/05/18/di-yi-tian-ru-zhi-xin-gong-si-zhi-ti-hui/</url>
+      
+        <content type="html"><![CDATA[<p>$<del>$今天是入职新公司的第一天，早上怀着忐忑的心情走进公司，找到坐在外面的同事说自己来入职。同事很热情，帮忙叫负责人过来对接，交了材料后顺利入职开始了加入新公司的一天。<br>$</del>$首先进行的是读书活动，大家来到一间空屋子准备好。今天读的是《论语·理仁篇》。其实想象的很美好，像是却跟想象有着很大的出入，之前考虑加入的时候，感觉每天写写字，读读书是一件很酷的事，但实际操作起来，我却觉得能坚持下来是真的不容易。觉得之前对自己的能力太高估了，尤其是在快节奏的工作环境下，而且这些事还联系到了自己的转正考核，顿时感觉压力山大。<br>$<del>$公司的另一项任务是利他，就是做一些帮助其他同事的事。虽然事情不难，但是对于我这样一个慢热型的人来说，尽快融入进去是一个不小的挑战。我只喜欢默默做自己的事，这是我的个人性格使然，而且还有严重的脸盲症，在短时间内记住认识每一位同事也是一项不小的挑战，而且大家基本上都带着口罩。好在同事们都很热情，也很乐意帮助我，这让我稍稍安心了一些。中午吃饭的时候，还有一位小伙伴（原谅我没记住是谁）过来教我洗杯子，不过看到我正在吃饭，就说明天再说，我很感激。<br>$</del>$今天的工作效率很低，可能以前习惯了懒散，也可能我的工作效率一直是这样，两个很简单的工作，我做了一天才完成，甚至下午的时候还犯困打盹儿了，这跟我的生活习惯也有很大的关系。虽然感觉公司做的活儿很杂，但是对自己的能力提升也有一定的帮助，比如今天就get到了AE描边动画的使用方法，重温了PR多机位剪辑的方法。要放在平时，我肯定懒得去研究学习，只有在项目使用到的时候才会想起临时抱佛脚。收获还是不小的。<br>$<del>$但是，让我很不解的一点是，到了下班时间，大家都不走，都留在工位继续干着自己的工作，仿佛还没到下班时间。这跟我自己的想法产生了冲突，我觉得到了下班时间我就自由了，下班后的时间是属于我自己的，如果有临时项目需要加班，我可以接受，但是看各位同事的状态貌似这就是日常，倘若当初跟我讲这个，我是断然不会来的，即使它很酷</del>我现在心里很纠结，不知道到底该如何是好，留下继续工作还是离开寻找新的工作。每天早上八点半到公司，直到晚上八九点才离开，这一天几乎十二三个点儿都在公司，回家吃吃饭休息一下就该睡觉了，完全没有了自己的私人时间，这是我不能接受的。明天再去公司上一天班，看看到底是什么情况，也好重新审视一下自己的内心，到底能不能接受这样的生活。</p><p>————————————完成于上班第一天晚上</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作随笔 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>利用Linux deploy把EFB运行在安卓机上</title>
       <link href="/2020/05/17/li-yong-linux-deploy-ba-efb-yun-xing-zai-an-zhuo-ji-shang/"/>
       <url>/2020/05/17/li-yong-linux-deploy-ba-efb-yun-xing-zai-an-zhuo-ji-shang/</url>
