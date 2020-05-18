@@ -46,7 +46,7 @@
     <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/17/li-yong-linux-deploy-ba-efb-yun-xing-zai-an-zhuo-ji-shang/"/>
     <id>http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/17/li-yong-linux-deploy-ba-efb-yun-xing-zai-an-zhuo-ji-shang/</id>
     <published>2020-05-17T14:31:54.000Z</published>
-    <updated>2020-05-17T14:52:42.365Z</updated>
+    <updated>2020-05-18T16:15:02.876Z</updated>
     
     <summary type="html">
     
@@ -54,7 +54,8 @@
       
         
         
-          &lt;h1&gt;&lt;span id=&quot;efb-wechat-利用linux-deploy把efb运行在安卓机上&quot;&gt;EFB-WeChat- 利用Linux
+          &lt;p&gt;这个操作原本是需要VPS来进行的，昨天晚上突发奇想，反正都是基于Linux，不如用旧手机整个Linux来运行&lt;br&gt;经过我不（闲）懈（的）努（蛋）力（疼）终于搞定了。&lt;/p&gt;
+&lt;p&gt;EH Forwarder
         
       
     
