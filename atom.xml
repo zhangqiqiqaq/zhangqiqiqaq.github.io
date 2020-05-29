@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/"/>
-  <updated>2020-05-23T18:28:33.679Z</updated>
+  <updated>2020-05-23T18:28:33.678Z</updated>
   <id>http://zhangqiqiqaq/zhangqiqiqaq.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>找工作之感想</title>
-    <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/17/gong-zuo-xun-zhao-zhi-gan-xiang/"/>
-    <id>http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/17/gong-zuo-xun-zhao-zhi-gan-xiang/</id>
-    <published>2020-05-17T14:29:46.000Z</published>
-    <updated>2020-05-23T18:28:33.679Z</updated>
+    <title>利用Linux deploy把EFB运行在安卓机上</title>
+    <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/17/li-yong-linux-deploy-ba-efb-yun-xing-zai-an-zhuo-ji-shang/"/>
+    <id>http://zhangqiqiqaq/zhangqiqiqaq.github.io/2020/05/17/li-yong-linux-deploy-ba-efb-yun-xing-zai-an-zhuo-ji-shang/</id>
+    <published>2020-05-17T14:31:54.000Z</published>
+    <updated>2020-05-23T18:28:33.678Z</updated>
     
     <summary type="html">
     
@@ -29,14 +29,15 @@
       
         
         
-          &lt;p&gt;$&lt;del&gt;$$&lt;/del&gt;$自2019年年底从上家单位离职到现在已经将近5个月了，说自己不着急，那肯定是假得。&lt;br&gt;原本打算的是年底离职，回家好好过个年，年后回来找工作，没成想遇到了疫情。这就让人很头疼了。&lt;br&gt;$&lt;del&gt;$$&lt;/del&gt;$离职的原因其实很简单，如果
+          &lt;p&gt;这个操作原本是需要VPS来进行的，昨天晚上突发奇想，反正都是基于Linux，不如用旧手机整个Linux来运行&lt;br&gt;经过我不（闲）懈（的）努（蛋）力（疼）终于搞定了。&lt;/p&gt;
+&lt;p&gt;EH Forwarder
         
       
     
     </summary>
     
     
-      <category term="工作随笔" scheme="http://zhangqiqiqaq/zhangqiqiqaq.github.io/categories/%E5%B7%A5%E4%BD%9C%E9%9A%8F%E7%AC%94/"/>
+      <category term="代码相关" scheme="http://zhangqiqiqaq/zhangqiqiqaq.github.io/categories/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3/"/>
     
     
   </entry>
