@@ -71,14 +71,19 @@
 }
 
 @font-face{
-    font-family: '';
-    src: url('../font/.ttf');
+    font-family: 'BenmoChenhei';
+    src: url('../font/BenmoChenhei.ttf');
 }
 
 body{
-    font-family: '';
+    font-family: 'BenmoChenhei';
 }
-/*主标题字体设置*/
+/*主标题字体设置
+@font-face{
+    font-family: '';
+    src: url('../.ttf');
+}
+
 .diy-font{
     font-family: '';
 }
