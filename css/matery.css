@@ -1097,6 +1097,8 @@ article .article-tags .chip {
     margin: 15px 0 5px 0;
     margin-bottom: 0.4rem;
     padding: 0.5rem 0.8rem;
+	/*文章链接溢出问题*/
+	word-break: break-all;
     border: 1px solid #eee;
     line-height: 2;
     transition: box-shadow 0.3s ease-in-out
