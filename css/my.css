@@ -71,12 +71,12 @@
 }
 
 @font-face{
-    font-family: '本墨陈黑';
-    src: url('../font/本墨陈黑.ttf');
+    font-family: 'BenmoChenhei';
+    src: url('../font/BenmoChenhei.ttf');
 }
 
 body{
-    font-family: '本墨陈黑';
+    font-family: 'BenmoChenhei';
 }
 /*主标题字体设置*/
 @font-face{
