@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/"/>
-  <updated>2020-05-23T18:28:33.678Z</updated>
+  <updated>2020-05-30T14:30:13.350Z</updated>
   <id>http://zhangqiqiqaq/zhangqiqiqaq.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新手向：Gclone配合AutoRclone突破Google网盘每日750G限制</title>
+    <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/post/3aae.html"/>
+    <id>http://zhangqiqiqaq/zhangqiqiqaq.github.io/post/3aae.html</id>
+    <published>2020-05-30T12:13:16.000Z</published>
+    <updated>2020-05-30T14:30:13.350Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这个教程的操作对于我来说主要是转存其他大佬分享的资源，主要是从drive到drive，没有团队盘的，自己搜一下吧，免费的挺多的，我这里就不推荐了，而且会有翻车的风险，也建议大家不要存重要的资源。真正有需求、求稳定的请上正规车。&lt;/p&gt;
+&lt;h2&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="代码相关" scheme="http://zhangqiqiqaq/zhangqiqiqaq.github.io/categories/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>利用Linux deploy把EFB运行在安卓机上</title>
