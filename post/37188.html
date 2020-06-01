@@ -1,0 +1,974 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="利用Linux deploy把EFB运行在安卓机上, 张启启的部落阁">
+    <meta name="description" content="专注生活，分享知识">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>利用Linux deploy把EFB运行在安卓机上 | 张启启的部落阁</title>
+    <link rel="icon" type="image/png" href="/favicon1.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="张启启的部落阁" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo1.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">张启启的部落阁</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>时光轴</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo1.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">张启启的部落阁</div>
+        <div class="logo-desc">
+            
+            专注生活，分享知识
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			时光轴
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于我
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zhangqiqiqaq/zhangqiqiqaq.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #F062A7;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zhangqiqiqaq/zhangqiqiqaq.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/zhangqiqiqaq/MyBlogPic/master/picture/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">利用Linux deploy把EFB运行在安卓机上</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3/" class="post-category">
+                                代码相关
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-05-17
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-06-01
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    7 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>这个操作原本是需要VPS来进行的，昨天晚上突发奇想，反正都是基于Linux，不如用旧手机整个Linux来运行<br>经过我不（闲）懈（的）努（蛋）力（疼）终于搞定了。</p>
+<p>EH Forwarder Bot是一个可扩展的聊天隧道框架，允许用户一次发送和接收来自多个IM平台的消息，并最终远程管理他们的帐户<br>目前可以实现用电报收发QQ、微信、Facebook Messenger等消息，你也可以同时一起收发多个微信、多个QQ等<br>今天我们只说收发微信消息，QQ的配置也同理，但是要用到酷Q，需要配置下docker</p>
+<p>这里先声明一下这个的优缺点：</p>
+<h3><span id="优点">优点：</span></h3><p>Telegram这个软件有FCM推送，聊天记录永久存储，流畅，消息再多都不会卡顿，还有防撤回功能<br>还有软件里贴图表情很多，可以直接发送到微信<br>还有Telegram这个软件，懂的人自然懂  </p>
+<h3><span id="缺点">缺点：</span></h3><p>仅支持微信网页版所支持的功能以及消息类型，即没有朋友圈、没有红包、不能发语音、不能发位置等等诸如此类<br>部分文件、图片、表情等多媒体文件会被网页版微信截断，即收不到任何数据，尤以表情为甚（这个主要是一些微信特有的表情包，斗图没问题）<br>因此造成的偶发现象，会提醒用户使用移动客户端查看</p>
+<h2><span id="强调一下">强调一下：</span></h2><p>这个操作主要是基于网页版微信来使用的，开始前请先在电脑上测试能不能登录网页版微信，如果不能就放弃吧<br>还有，这个需要科学上网</p>
+<p>下面正式开始我们的骚操作</p>
+<h3><span id="前期准备">前期准备：</span></h3><p>一台安卓设备（手机、平板设备都可以，建议不用的旧手机就可以）</p>
+<p>1.设备硬件要求：建议RAM在1G及以上，手机ROM空闲容量最少4G以上<br>设备软件要求：建议安卓版本4.0以上，系统必须是拥有ROOT系统权限的</p>
+<p>2.Busy Box 相信酷安的老哥们应该都知道这个软件咋用吧，就不介绍了</p>
+<p>4.Linux Deploy 安卓平台虚拟机（chroot运行linux的容器）</p>
+<p>5.电脑一台 其实没有电脑用手机也可以，就是操作麻烦一些</p>
+<p>6.ssh软件一个 电脑推荐finalshell（新手使用比较直观），手机推荐termux，反正能用就行</p>
+<h3><span id="正式开始">正式开始：</span></h3><p>第一步：</p>
+<p>先给旧手机root（必须），然后科学上网，不然后面还要换源，没有的可以自己百度下怎么换国内源<br>最后安装Linux deploy</p>
+<p>第二步：</p>
+<p>Linux deploy设置</p>
+<p>先点左上角三个横线——设置——前三项勾选上</p>
+<p>再点右下角三个横线，发行版选Debian，架构选armhf，源地址默认（不能科学上网的自己百度国内源填进去）<br>镜像大小建议10240（10G）建议最小不少于4个G，用户密码默认就行（愿意自己改就改改）<br>最后拉到下面SSH，勾选启用ssh，其他全部默认就好</p>
+<p>返回主页面，点右上角三个点，点击安装（在这之前联网就不用我说了叭）等待安装完成。</p>
+<p>第三步：</p>
+<p>用ssh软件连接我们装好的Linux，局域网下可以用电脑或者另一部手机来操作（在同一个WiFi下即可）<br>如果没有局域网可以在安装Linux的手机上操作（这里推荐juice ssh）</p>
+<p>这里只说在局域网下的情况，没有局域网的情况如何连接请百度juice ssh的用法  </p>
+<p>我们先用ssh软件连接到我们手机上安装好的Linux  </p>
+<p>ip地址就是手机的ip地址，有的版本会在Linuxdeploy的主页面上显示，有的不会显示，直接到WiFi设置里面看，就可以了  </p>
+<p>finalshell的用法大家自行百度一下就好</p>
+<p>termux使用方法<br>输入命令pkg install openssh<br>键入命令：ssh [username]@[ip] 回车<br>比如：ssh <a href="mailto:android@192.168.123.123">android@192.168.123.123</a> 回车<br>输入服务器ssh登录密码<br>登录成功</p>
+<h2><span id="前期准备工作已经完成下面进入正题">前期准备工作已经完成，下面进入正题：</span></h2><p>（没想到吧，这才开始正题）<br>（如果运行下面命令后提示权限错误，请在命令前加上sudo再次运行）</p>
+<p><strong>1、安装依赖</strong></p>
+<p><code>apt install libwebp-dev libmagic-dev git screen -y</code></p>
+<p><strong>2、安装Python3.6 4</strong></p>
+<p><code>wget https://www.moerats.com/usr/shell/Python3/Debian_Python3.6.sh &amp;&amp; sh Debian_Python3.6.sh</code></p>
+<p><strong>3、安装ffmpeg</strong></p>
+<p>下载ffmpeg二进制</p>
+<p><code>wget https://www.moerats.com/usr/down/ffmpeg/ffmpeg-git-$(getconf LONG_BIT)bit-static.tar.xz</code></p>
+<p>解压文件</p>
+<p><code>tar xvf ffmpeg-git-*-static.tar.xz</code></p>
+<p>移动ffmpeg可执行文件</p>
+<p><code>mv ffmpeg-git-/ffmpeg ffmpeg-git-/ffprobe /usr/bin/</code></p>
+<p>删除文件</p>
+<p><code>rm -rf ffmpeg-git-*</code></p>
+<p><strong>4、安装框架</strong></p>
+<p><code>pip3 install ehforwarderbot</code></p>
+<p><strong>5、安装电报模块</strong></p>
+<p><code>pip3 install efb-telegram-master</code></p>
+<p><em>（如果你在此步骤遇到错误信息，请到最后查看解决方法）</em></p>
+<p><strong>6、 安装微信模块</strong></p>
+<p><code>pip3 install efb-wechat-slave</code></p>
+<p><strong>7、配置模块</strong></p>
+<p>先新建配置文件夹和配置文件config.yaml</p>
+<p><code>mkdir -p ~/.ehforwarderbot/profiles/default</code></p>
+<p><code>nano ~/.ehforwarderbot/profiles/default/config.yaml</code></p>
+<p><em>Default为配置文件默认的文件夹，你也可以命名为其它的，不会的就默认</em></p>
+<p>在打开的界面填入以下内容：</p>
+<p><code>master_channel: blueset.telegram</code><br><code>slave_channels:</code><br><code>- blueset.wechat</code></p>
+<p>然后按Ctrl+x 接着按Y 保存退出</p>
+<p><strong>8、配置电报模块</strong></p>
+<p>首先打开电报软件<br>关注@BotFather<br>到对话框依次输入：<code>/start</code>——<code>/newbot</code><br>然后会要你给机器人命名(填入你想取得名字)，命名完成会给你一个Token，记好此Token<br>然后关注@get_id_bot<br>到对话框输入：<code>/start</code><br>在返回的消息中找到“your chat ID =12345678” 记好等号后面的数字  </p>
+<p>再新建一个电报模块配置文件夹和配置文件config.yaml</p>
+<p>使用命令：</p>
+<p><code>mkdir ~/.ehforwarderbot/profiles/default/blueset.telegram</code></p>
+<p><code>nano ~/.ehforwarderbot/profiles/default/blueset.telegram/config.yaml</code></p>
+<p><em>同样的也建在default文件夹，如果你上面更改了default文件夹，那这里也要更改</em></p>
+<p>在打开的界面填入以下内容：</p>
+<p><code>token: "你的Token"</code><br><code>admins:</code><br><code>- 你的ID</code></p>
+<p>然后按Ctrl+x 接着按Y 保存退出</p>
+<p><strong>9、启动</strong></p>
+<p>在命令行界面输入：</p>
+<p><code>ehforwarderbot</code></p>
+<p>如果你前面换了默认的文件夹，则使用：</p>
+<p><code>ehforwarderbot -p 你文件夹的名字</code></p>
+<p>使用这个命令后，命令行界面会显示二维码，用自己的微信扫码登录即可。</p>
+<h3><span id="前面安装etm如果遇到错误信息请看此处">前面安装ETM如果遇到错误信息请看此处：</span></h3><h5><span id="如果遇到类似报错">如果遇到类似报错：</span></h5><p>Command “/usr/local/bin/python3.6 -u -c “import setuptools, tokenize;<strong>file</strong>=’/tmp/pip-build-pq5689wy/cffi/setup.py’;f=getattr(tokenize, ‘open’, open)(<strong>file</strong>);code=f.read().replace(‘\r\n’, ‘\n’);f.close();exec(compile(code,  <strong>file</strong>, ‘exec’))” install –record /tmp/pip-10d1o1nr-record/install-record.txt –single-version-externally-managed –compile” failed with error code 1 in /tmp/pip-build-pq5689wy/cffi/</p>
+<h5><span id="则在命令行界面输入">则在命令行界面输入：</span></h5><p><code>sudo pip3 install wheel</code></p>
+<h5><span id="如果遇到下面这样的报错">如果遇到下面这样的报错：</span></h5><p>Failed cleaning build dir for cryptography<br>Failed building wheel for cffi</p>
+<h5><span id="则在命令行运行如下命令">则在命令行运行如下命令：</span></h5><p><code>sudo apt install libffi-dev</code><br><code>sudo -H pip install –user –upgrade –no-cache-dir efb-telegram-master</code></p>
+<h3><span id="即可解决">即可解决</span></h3><h3><span id="命令部分整理来自rats-blog附上链接">命令部分整理来自Rat’s Blog，附上链接：</span></h3><p><a href="https://www.moerats.com/archives/931/" target="_blank" rel="noopener">https://www.moerats.com/archives/931/</a></p>
+<h3><span id="efb官方地址">EFB官方地址：</span></h3><p><a href="https://github.com/blueset/ehForwarderBot" target="_blank" rel="noopener">https://github.com/blueset/ehForwarderBot</a><br><br><br><br><br><br></p>
+<h3><span id="如果有其它报错请各位大佬自行google或者baidu因为我也不会">如果有其它报错，请各位大佬自行google或者baidu，因为我也不会<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8">😂</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8">😂</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8">😂</span></span></h3><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://zhangqiqiqaq/zhangqiqiqaq.github.io" rel="external nofollow noreferrer">zhangqiqi</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/post/37188.html">http://zhangqiqiqaq/zhangqiqiqaq.github.io/post/37188.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://zhangqiqiqaq/zhangqiqiqaq.github.io" target="_blank">zhangqiqi</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '90704054cf05b461599a',
+        clientSecret: 'f78b928a4297236c095a6fdb58950414c6766041',
+        repo: 'zhangqiqiqaq.github.io',
+        owner: 'zhangqiqiqaq',
+        admin: "zhangqiqiqaq",
+        id: '2020-05-17T22-31-54',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/post/3aae.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://raw.githubusercontent.com/zhangqiqiqaq/MyBlogPic/master/picture/11.jpg" class="responsive-img" alt="新手向：Gclone配合AutoRclone突破Google网盘每日750G限制">
+                        
+                        <span class="card-title">新手向：Gclone配合AutoRclone突破Google网盘每日750G限制</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            最近弄了一下Google网盘的转存，遇到不少坑，特此记录一下
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3/" class="post-category">
+                                    代码相关
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/post/37188.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://raw.githubusercontent.com/zhangqiqiqaq/MyBlogPic/master/picture/21.jpg" class="responsive-img" alt="利用Linux deploy把EFB运行在安卓机上">
+                        
+                        <span class="card-title">利用Linux deploy把EFB运行在安卓机上</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            利用Linux deploy把EFB运行在安卓机上
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3/" class="post-category">
+                                    代码相关
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 张启启的部落阁<br />'
+            + '文章作者: zhangqiqi<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="5014192463"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m12 l12 copy-right">
+            Zhangqiqi&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="http://zhangqiqiqaq/zhangqiqiqaq.github.io" target="_blank">zhangqiqi</a>
+            
+            <br>
+            
+            &nbsp;
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                &nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "5";
+                    var startDate = "11";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+	<script type="text/javascript"> var OriginTitile = document.title, st; 
+document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ咦？去哪里啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪哈！你回来啦！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
+
+</body>
+
+</html>
