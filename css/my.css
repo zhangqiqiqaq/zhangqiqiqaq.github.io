@@ -75,7 +75,7 @@
     src: url('../font/BenmoChenhei.ttf');
 }
 
-body{
+.diy-font{
     font-family: 'BenmoChenhei';
 }
 /*主标题字体设置
