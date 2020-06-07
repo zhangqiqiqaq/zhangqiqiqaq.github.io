@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>利用Goindex和GoogleDrive打造自己的无限网盘</title>
+      <link href="/post/fdf9.html"/>
+      <url>/post/fdf9.html</url>
+      
+        <content type="html"><![CDATA[<h1><span id="goindex">GoIndex  </span></h1><p>基于 <a href="https://workers.cloudflare.com/" target="_blank" rel="noopener">Cloudflare Workers</a> 和 <a href="https://www.google.com/drive/" target="_blank" rel="noopener">Google Drive</a> 的功能，你可以部署你的代码在Cloudflare Workers，实现以目录形式展示google drive中的文件。</p><h2><span id="功能介绍">功能介绍</span></h2><ol><li>部署在 CloudFlare Workers的小程序。  </li><li>可以将 Google Drive 文件以目录形式列出，并直连下载。  </li><li>流量走 CloudFlare ，网速由 CloudFlare 决定。</li></ol><h2><span id="demo">Demo</span></h2><p>由于原作者删库跑路了,所以官方的演示地址也打不开了,由于我本人的配置也经常改变,所以这里就不放演示地址了,大家如果有需求,可以搜一下其他大佬的项目看一下效果.</p><h2><span id="安装部署">安装部署</span></h2><p>由于原作者删库跑路~~所以原项目中一键生成代码的方法已经不可行了,需要我们手动配置</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 代码相关 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>利用TelegramBot控制VPS</title>
       <link href="/post/3aa2.html"/>
       <url>/post/3aa2.html</url>
