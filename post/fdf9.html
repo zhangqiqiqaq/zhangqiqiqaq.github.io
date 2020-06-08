@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="利用Goindex和GoogleDrive打造自己的无限网盘, ZhangQiQi">
+    <meta name="keywords" content="GoIndex,GoogleDrive">
     <meta name="description" content="专注生活，分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -300,7 +300,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://source.thankjava.com/view/XJvGonH')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://source.thankjava.com/view/XKUjuvf')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -355,21 +355,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-07
+                    2020-06-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    248
+                    723
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -386,12 +386,98 @@
             <div id="articleContent">
                 <h1><span id="goindex">GoIndex  </span></h1><p>基于 <a href="https://workers.cloudflare.com/" target="_blank" rel="noopener">Cloudflare Workers</a> 和 <a href="https://www.google.com/drive/" target="_blank" rel="noopener">Google Drive</a> 的功能，你可以部署你的代码在Cloudflare Workers，实现以目录形式展示google drive中的文件。</p>
 <h2><span id="功能介绍">功能介绍</span></h2><ol>
-<li>部署在 CloudFlare Workers的小程序。  </li>
-<li>可以将 Google Drive 文件以目录形式列出，并直连下载。  </li>
-<li>流量走 CloudFlare ，网速由 CloudFlare 决定。</li>
+<li><p>部署在 CloudFlare Workers的小程序。  </p>
+</li>
+<li><p>可以将 Google Drive 文件以目录形式列出，并直连下载。  </p>
+</li>
+<li><p>流量走 CloudFlare ，网速由 CloudFlare 决定。</p>
+</li>
+</ol>
+<h2><span id="功能特点">功能特点</span></h2><ol>
+<li><p>免费(不要钱)。  </p>
+</li>
+<li><p>免翻(你懂的)。 </p>
+</li>
+<li><p>直链(可下载)。</p>
+</li>
+</ol>
+<h2><span id="使用限制">使用限制</span></h2><ol>
+<li><p>wokers每天有10万次的请求限制  </p>
+</li>
+<li><p>google drive 下载10T/24h  </p>
+</li>
+<li><p>google api 调用限制</p>
+</li>
 </ol>
 <h2><span id="demo">Demo</span></h2><p>由于原作者删库跑路了,所以官方的演示地址也打不开了,由于我本人的配置也经常改变,所以这里就不放演示地址了,大家如果有需求,可以搜一下其他大佬的项目看一下效果.</p>
-<h2><span id="安装部署">安装部署</span></h2><p>由于原作者删库跑路~~所以原项目中一键生成代码的方法已经不可行了,需要我们手动配置</p>
+<h2><span id="安装部署">安装部署</span></h2><p>由于原作者删库跑路~~所以原项目中一键生成代码的方法已经不可行了,但是还可以使用<a href="https://install.kenci.workers.dev/" target="_blank" rel="noopener">这个</a>(我忘了是哪位大神弄得了,有知道的可以告知我一下)</p>
+<ol>
+<li>直接打开<a href="https://install.kenci.workers.dev/" target="_blank" rel="noopener">网址</a></li>
+</ol>
+<p><img src="https://source.thankjava.com/view/XKUVnzk" alt></p>
+<ol start="2">
+<li>点击<code>GET AUTH CODE</code></li>
+</ol>
+<p><img src="https://source.thankjava.com/view/XKUWDbh" alt></p>
+<ol start="3">
+<li>选择你要使用的账号,登录之</li>
+</ol>
+<p><img src="https://source.thankjava.com/view/XKUWbOm" alt></p>
+<ol start="4">
+<li>一路点确认,得到授权码</li>
+</ol>
+<p><img src="https://source.thankjava.com/view/XKUWoOH" alt></p>
+<ol start="5">
+<li>拷贝授权码,粘贴到第一行中</li>
+</ol>
+<p><img src="https://source.thankjava.com/view/XKUc2et" alt></p>
+<ol start="6">
+<li>点击<code>BUILD NOW</code>后会出现许多代码</li>
+</ol>
+<p><img src="https://source.thankjava.com/view/XKUYJpc" alt></p>
+<ol start="7">
+<li>点击<code>COPY ALL</code>,然后打开<a href="https://dash.cloudflare.com/" target="_blank" rel="noopener">这个网址</a>,注册账号并登录</li>
+</ol>
+<p><img src="https://source.thankjava.com/view/XKUYweX" alt></p>
+<ol start="8">
+<li>点击<code>创建workers</code>,第一次进来可能会提示你绑定域名,填一个你喜欢的名字就好,不过一次确定以后就不能改了,建议慎重.我这里已经创建好了,就不再演示了</li>
+</ol>
+<p><img src="https://source.thankjava.com/view/XKUZQrV" alt></p>
+<ol start="9">
+<li><p>将第6步生成的代码添加到出现的内容框框里面</p>
+<p><img src="https://source.thankjava.com/view/XKUb9LA" alt></p>
+<ol start="10">
+<li>点击<code>保存并部署</code>即可.点击预览可以观看效果</li>
+</ol>
+<p><img src="https://source.thankjava.com/view/XKUcnsq" alt></p>
+</li>
+</ol>
+<ol start="11">
+<li>如果你有自己的域名,可以绑定自己的域名</li>
+</ol>
+<p><img src="https://source.thankjava.com/view/XKUhI7t" alt><br><img src="https://source.thankjava.com/view/XKUhXRY" alt></p>
+<h3><span id="这样你就可以直接输入自己的域名来访问你的googledrive的文件了">这样你就可以直接输入自己的域名来访问你的GoogleDrive的文件了</span></h3><br>
+<br>
+<br>
+<br>
+
+<h2><span id="这里使用的是公用的api可能在高峰期或者某些时候会有速度慢或者某些问题所以建议大家使用自己的api具体配置方法可参考这里由于我比较懒就不写了00">这里使用的是公用的API,可能在高峰期或者某些时候会有速度慢或者某些问题,所以建议大家使用自己的API.具体配置方法可参考,由于我比较懒,就不写了0.0</span></h2><p>其实主要就是获取<code>client_id</code> <code>client_secret</code> <code>refresh_token</code>这三个参数,然后直接在上面第6步获取的代码中修改即可.其中<code>client_id</code> <code>client_secret</code> 这两个参数可以直接在Google API的配置页面找到,<code>refresh_token</code>需要使用配置Rclone获得</p>
+<p><img src="https://source.thankjava.com/view/XKUlxUK" alt></p>
+<br>
+<br>
+<br>
+<br>
+
+<h2><span id="如果有上传需求的可以使用gdindex具体项目地址请点击这里">如果有上传需求的,可以使用GDindex,具体项目地址请点击</span></h2><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p>感谢网上诸多大神的教程,此处就不一一列举了,感谢各位大神的付出</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -547,7 +633,7 @@
                 <a href="/post/fdf9.html">
                     <div class="card-image">
                         
-                        <img src="https://source.thankjava.com/view/XJvGonH" class="responsive-img" alt="利用Goindex和GoogleDrive打造自己的无限网盘">
+                        <img src="https://source.thankjava.com/view/XKUjuvf" class="responsive-img" alt="利用Goindex和GoogleDrive打造自己的无限网盘">
                         
                         <span class="card-title">利用Goindex和GoogleDrive打造自己的无限网盘</span>
                     </div>
