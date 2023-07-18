@@ -3,7 +3,7 @@
   <title>ZhangQiQi</title>
   
   <subtitle>迷茫，是因为才华配不上梦想</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangqiqiqaq/zhangqiqiqaq.github.io/"/>
   <updated>2023-07-18T03:55:14.297Z</updated>
@@ -23,21 +23,19 @@
     <published>2023-07-17T12:56:28.000Z</published>
     <updated>2023-07-18T03:55:14.297Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;script&gt;
+    <summary type="html">&lt;script&gt;
         document.querySelectorAll(&#39;.github-emoji&#39;)
           .forEach(el =&gt; {
             if (!el.dataset.src) { return; }
-       
+       </summary>
         
       
     
-    </summary>
     
     
     
