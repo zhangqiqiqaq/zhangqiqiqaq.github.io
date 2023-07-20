@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> 宣传片 </category>
+          <category> 宣传类 </category>
           
       </categories>
       
@@ -32,7 +32,7 @@
       
       <categories>
           
-          <category> 短视频 </category>
+          <category> 短片类 </category>
           
       </categories>
       
@@ -51,7 +51,7 @@
       
       <categories>
           
-          <category> 短视频 </category>
+          <category> 短片类 </category>
           
       </categories>
       
@@ -68,18 +68,30 @@
         <content type="html"><![CDATA[<h1><span id="丰台二十四丰味美食"><center><strong>丰台二十四丰味美食</strong><center></center></center></span></h1><p><video src="http://video.zqqqaq.tk/0:/20220402%E4%B8%B0%E5%8F%B0%E4%BA%8C%E5%8D%81%E5%9B%9B%E4%B8%B0%E5%91%B3%E7%BE%8E%E9%A3%9F(3).mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"> your browser does not support the video tag </video></p>]]></content>
       
       
+      <categories>
+          
+          <category> 宣传类 </category>
+          
+      </categories>
+      
       
     </entry>
     
     
     
     <entry>
-      <title>丰台商业体</title>
+      <title></title>
       <link href="/post/d3c2.html"/>
       <url>/post/d3c2.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1><span id="丰台商业体短片"><center><strong>丰台商业体短片</strong><center></center></center></span></h1><p><video src="http://video.zqqqaq.tk/0:/20210729%E5%95%86%E4%B8%9A%E4%BD%933.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"> your browser does not support the video tag </video></p>]]></content>
       
+      
+      <categories>
+          
+          <category> 短片类 </category>
+          
+      </categories>
       
       
     </entry>
@@ -87,12 +99,18 @@
     
     
     <entry>
-      <title>丰台消费季花絮</title>
+      <title></title>
       <link href="/post/36ee.html"/>
       <url>/post/36ee.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1><span id="丰台消费季花絮"><center><strong>丰台消费季花絮</strong><center></center></center></span></h1><p><video src="http://video.zqqqaq.tk/0:/20210428%E4%B8%B0%E5%8F%B0%E6%B6%88%E8%B4%B9%E5%AD%A3%E8%8A%B1%E7%B5%AE(2).mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"> your browser does not support the video tag </video></p>]]></content>
       
+      
+      <categories>
+          
+          <category> 活动类 </category>
+          
+      </categories>
       
       
     </entry>
@@ -104,8 +122,14 @@
       <link href="/post/799.html"/>
       <url>/post/799.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1><span id="我们陪你"><center><strong>我们陪你</strong><center></center></center></span></h1><p><video src="http://video.zqqqaq.tk/0:/20210428%E4%B8%B0%E5%8F%B0%E6%B6%88%E8%B4%B9%E5%AD%A3%E8%8A%B1%E7%B5%AE(2).mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"> your browser does not support the video tag </video></p>]]></content>
       
+      
+      <categories>
+          
+          <category> 宣传类 </category>
+          
+      </categories>
       
       
     </entry>
@@ -122,7 +146,7 @@
       
       <categories>
           
-          <category> 专题片 </category>
+          <category> 专题类 </category>
           
       </categories>
       
@@ -141,7 +165,7 @@
       
       <categories>
           
-          <category> 专题片 </category>
+          <category> 专题类 </category>
           
       </categories>
       
@@ -160,7 +184,7 @@
       
       <categories>
           
-          <category> MV </category>
+          <category> 宣传类 </category>
           
       </categories>
       
@@ -179,7 +203,7 @@
       
       <categories>
           
-          <category> 专题片 </category>
+          <category> 专题类 </category>
           
       </categories>
       
@@ -198,7 +222,7 @@
       
       <categories>
           
-          <category> 活动片 </category>
+          <category> 活动类 </category>
           
       </categories>
       
@@ -217,7 +241,7 @@
       
       <categories>
           
-          <category> 专题片 </category>
+          <category> 专题类 </category>
           
       </categories>
       
